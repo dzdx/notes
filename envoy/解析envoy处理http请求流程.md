@@ -23,7 +23,7 @@ Envoy是istio的核心组件之一，以sidecar的方式与服务运行在一起
 
 Envoy深度依赖libevent，http的整个处理过程都是由libevent触发协调
 
-##libevent函数
+## libevent函数
 
 - `evconnlistener_new`
 
@@ -69,7 +69,7 @@ Envoy深度依赖libevent，http的整个处理过程都是由libevent触发协�
 
 filter是envoy的核心功能之一，采用插件的形式提供功能，请求各个阶段都有filter的hook，用户可以自由添加自定义类型的filter添加新的功能
 
-##filter流程图
+## filter流程图
 
 1. Client向Envoy的15001 port建立连接，被转到80 port的Listener
 
@@ -91,9 +91,9 @@ filter是envoy的核心功能之一，采用插件的形式提供功能，请求
 
    ![](https://picgo-1259280442.cos.ap-shanghai.myqcloud.com/20190603220718.png)
 
-##filter分类
+## filter分类
 
-1. **ListenerFilter  **
+1. **ListenerFilter**
 
     [listener.listener_filters](<https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/listener/listener.proto#listener-listenerfilter>)
 
@@ -120,7 +120,7 @@ filter是envoy的核心功能之一，采用插件的形式提供功能，请求
     				 Server::Configuration::NamedListenerFilterConfigFactory);
     ```
 
-2. **ReadFilter **
+2. **ReadFilter**
 
     [listener.filter_chains.filters](<https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/listener/listener.proto#listener-filter>)
 
@@ -156,7 +156,7 @@ filter是envoy的核心功能之一，采用插件的形式提供功能，请求
     			     Server::Configuration::NamedNetworkFilterConfigFactory)
     ```
 
-3. **WriteFilter **
+3. **WriteFilter**
 
     [listener.filter_chains.filters](<https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/listener/listener.proto#listener-filter>)
 
@@ -274,7 +274,7 @@ REGISTER_FACTORY(HttpConnectionManagerFilterConfigFactory,
 
    
 
-6. **PerFilterConfig  **(并不是filter，只是为4，5中的http_filter提供route级别的配置数据)
+6. **PerFilterConfig** (并不是filter，只是为4，5中的http_filter提供route级别的配置数据)
 
     [route.virtual_hosts.per_filter_config](<https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/route/route.proto#route-virtualhost>)
 
@@ -328,9 +328,9 @@ REGISTER_FACTORY(HttpConnectionManagerFilterConfigFactory,
 
 
 
-##Filter流程中关键步骤解析
+## Filter流程中关键步骤解析
 
-###1. findActiveListenerByAddress
+### 1. findActiveListenerByAddress
 
 根据socket的localaddress和port选择合适的Listener处理
 
