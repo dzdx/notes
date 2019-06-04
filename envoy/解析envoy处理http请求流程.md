@@ -620,7 +620,7 @@ void ReportBatch::Report(
   - connpool被删除，`busy_clients_`会被清空
   - 连接关闭时，如果是正在包含stream_wrapper (正在发送请求）的client，就会从`busy_clients`移除
 
--  `ready_clients_`  空闲连接
+- `ready_clients_`  空闲连接
 
   变多：
 
