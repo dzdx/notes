@@ -512,11 +512,11 @@ REGISTER_FACTORY(HttpConnectionManagerFilterConfigFactory,
 
 
 
-# Mixer
+## Mixer
 
 mixerclient是istio基于Envoy，添加filter进行check和report的模块
 
-## 注册到Envoy
+### 注册到Envoy
 
 ```c++
 Http::FilterFactoryCb createFilterFactory(const HttpClientConfig& config_pb,
