@@ -25,7 +25,7 @@ filter是envoy的核心功能之一，采用插件的形式提供功能，请求
 
 2. Client发送请求给Envoy，Envoy经过路由后找到上游Server，并发送请求
 
-   ![](https://picgo-1259280442.cos.ap-shanghai.myqcloud.com/20190603220615.png)
+   ![](./20190603220615.png)
 
 3. 上游Server返回响应给Envoy，Envoy利用event_active立即返回响应给下游的client
 
